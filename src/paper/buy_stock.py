@@ -11,6 +11,7 @@ from dotenv import dotenv_values
 import math
 import filter_by_ta
 import os
+import check_if_market_open
 
 # Define prod config
 config = os.environ
@@ -94,5 +95,11 @@ def main():
         print("Order not successful", stocks_to_trade[0]['Symbol'])
     return order
 
-# Run main    
-main()
+# Run check_if_market_open function
+stock_market_open = check_if_market_open.get_if_market_day()
+
+# If market is open check holdings
+if stock_market_open:
+    main()
+else:
+    print('Market not open')
