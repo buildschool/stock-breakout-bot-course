@@ -1,0 +1,6 @@
+finviz
+yfinance
+pandas
+pandas-ta
+alpaca-py
+python-dotenv
